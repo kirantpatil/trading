@@ -1,7 +1,7 @@
 title: "RedSpice Trading Co."
 description: "Premium quality dry red chillies sourced directly from India's finest farms. Wholesale and retail supply for businesses and consumers worldwide."
-baseurl: ""
-url: ""
+baseurl: "/trading"
+url: "https://kirantpatil.github.io"
 
 author:
   name: "RedSpice Trading Co."
