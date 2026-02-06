@@ -1,0 +1,105 @@
+---
+layout: home
+title: "Home"
+---
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1>Premium Dry Red Chillies<br>From India's Finest Farms</h1>
+      <p>We source, process, and supply the highest quality dry red chillies to businesses and consumers worldwide. From Guntur's legendary fields to your doorstep.</p>
+      <div class="hero-buttons">
+        <a href="{{ '/products/' | relative_url }}" class="btn btn-primary">Explore Products</a>
+        <a href="{{ '/contact/' | relative_url }}" class="btn btn-outline">Get a Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="features">
+  <div class="container">
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">&#9733;</div>
+        <h3>Premium Quality</h3>
+        <p>Hand-picked and carefully sorted chillies that meet the highest international quality standards for color, pungency, and flavor.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#9752;</div>
+        <h3>Farm Fresh</h3>
+        <p>Sourced directly from trusted farmers in Guntur, Byadgi, and Kashmiri regions, ensuring freshness and traceability.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#9881;</div>
+        <h3>Custom Processing</h3>
+        <p>Available in whole, crushed, flakes, and powder form. Custom grinding and packaging to meet your exact specifications.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#9992;</div>
+        <h3>Global Shipping</h3>
+        <p>Efficient logistics and export handling to deliver your order anywhere in the world with proper documentation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="featured-products">
+  <div class="container">
+    <h2 class="section-title">Our Popular Varieties</h2>
+    <p class="section-subtitle">Discover our most sought-after dry red chilli varieties</p>
+    <div class="products-grid">
+      {% for product in site.products limit:3 %}
+      <div class="product-card">
+        <div class="product-image-placeholder" style="background-color: {{ product.color | default: '#c0392b' }}">
+          <span>{{ product.title | truncate: 1, "" }}</span>
+        </div>
+        <div class="product-card-body">
+          <h3>{{ product.title }}</h3>
+          <p>{{ product.description | truncate: 100 }}</p>
+          <div class="product-tags">
+            {% if product.origin %}<span class="tag">{{ product.origin }}</span>{% endif %}
+            {% if product.shu_range %}<span class="tag heat">{{ product.shu_range }} SHU</span>{% endif %}
+          </div>
+          <a href="{{ product.url | relative_url }}" class="btn btn-small">Learn More</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="text-center" style="margin-top: 2rem;">
+      <a href="{{ '/products/' | relative_url }}" class="btn btn-primary">View All Products</a>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-number">15+</span>
+        <span class="stat-label">Years of Experience</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">500+</span>
+        <span class="stat-label">Happy Clients</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">20+</span>
+        <span class="stat-label">Countries Served</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">5000+</span>
+        <span class="stat-label">Tons Exported Annually</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Ready to Source Premium Chillies?</h2>
+      <p>Whether you need bulk wholesale supply or custom retail packaging, we have the right solution for your business.</p>
+      <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary btn-large">Contact Us Today</a>
+    </div>
+  </div>
+</section>

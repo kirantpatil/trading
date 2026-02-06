@@ -1,0 +1,48 @@
+---
+layout: default
+---
+
+<section class="product-detail">
+  <div class="container">
+    <a href="{{ '/products/' | relative_url }}" class="back-link">&larr; Back to All Products</a>
+    <div class="product-detail-grid">
+      <div class="product-detail-image">
+        <div class="product-image-placeholder" style="background-color: {{ page.color | default: '#c0392b' }}">
+          <span>{{ page.title | truncate: 1, "" }}</span>
+        </div>
+      </div>
+      <div class="product-detail-info">
+        <h1>{{ page.title }}</h1>
+        <div class="product-meta">
+          {% if page.origin %}<span class="meta-tag">Origin: {{ page.origin }}</span>{% endif %}
+          {% if page.shu_range %}<span class="meta-tag heat">Heat: {{ page.shu_range }} SHU</span>{% endif %}
+        </div>
+        <p class="product-description">{{ page.description }}</p>
+        <div class="product-body">
+          {{ content }}
+        </div>
+        {% if page.available_forms %}
+        <div class="product-forms">
+          <h3>Available Forms</h3>
+          <ul>
+            {% for form in page.available_forms %}
+            <li>{{ form }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+        {% if page.packaging %}
+        <div class="product-packaging">
+          <h3>Packaging Options</h3>
+          <ul>
+            {% for pack in page.packaging %}
+            <li>{{ pack }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endif %}
+        <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary">Request a Quote</a>
+      </div>
+    </div>
+  </div>
+</section>

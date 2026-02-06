@@ -1,0 +1,32 @@
+title: "RedSpice Trading Co."
+description: "Premium quality dry red chillies sourced directly from India's finest farms. Wholesale and retail supply for businesses and consumers worldwide."
+baseurl: ""
+url: ""
+
+author:
+  name: "RedSpice Trading Co."
+  email: "info@redspicetrading.com"
+
+collections:
+  products:
+    output: true
+    permalink: /products/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "products"
+    values:
+      layout: "product"
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+sass:
+  style: compressed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md

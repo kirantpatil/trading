@@ -1,0 +1,74 @@
+---
+layout: page
+title: "Contact Us"
+subtitle: "Get in touch for quotes, inquiries, and partnerships"
+permalink: /contact/
+---
+
+<div class="contact-grid">
+  <div class="contact-form-section">
+    <h2>Send Us a Message</h2>
+    <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+      <div class="form-group">
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="company">Company Name</label>
+        <input type="text" id="company" name="company">
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone">
+      </div>
+      <div class="form-group">
+        <label for="product">Product of Interest</label>
+        <select id="product" name="product">
+          <option value="">-- Select a product --</option>
+          {% for product in site.products %}
+          <option value="{{ product.title }}">{{ product.title }}</option>
+          {% endfor %}
+          <option value="custom">Custom Requirement</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="quantity">Estimated Quantity</label>
+        <input type="text" id="quantity" name="quantity" placeholder="e.g., 500 kg, 2 tons">
+      </div>
+      <div class="form-group full-width">
+        <label for="message">Your Message *</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Send Inquiry</button>
+    </form>
+  </div>
+
+  <div class="contact-info-section">
+    <div class="contact-card">
+      <h3>Office Address</h3>
+      <p>RedSpice Trading Co.<br>
+        Plot No. 42, Spice Market Road<br>
+        Guntur, Andhra Pradesh 522001<br>
+        India</p>
+    </div>
+    <div class="contact-card">
+      <h3>Phone</h3>
+      <p>+91 98765 43210<br>
+        +91 86300 12345</p>
+    </div>
+    <div class="contact-card">
+      <h3>Email</h3>
+      <p>info@redspicetrading.com<br>
+        sales@redspicetrading.com</p>
+    </div>
+    <div class="contact-card">
+      <h3>Business Hours</h3>
+      <p>Monday - Saturday<br>
+        9:00 AM - 6:00 PM IST</p>
+    </div>
+  </div>
+</div>

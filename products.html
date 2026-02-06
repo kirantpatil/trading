@@ -1,0 +1,31 @@
+---
+layout: page
+title: "Our Products"
+subtitle: "Premium dry red chilli varieties for every culinary and industrial need"
+permalink: /products/
+---
+
+<div class="products-grid">
+  {% for product in site.products %}
+  <div class="product-card">
+    <div class="product-image-placeholder" style="background-color: {{ product.color | default: '#c0392b' }}">
+      <span>{{ product.title | truncate: 1, "" }}</span>
+    </div>
+    <div class="product-card-body">
+      <h3>{{ product.title }}</h3>
+      <p>{{ product.description | truncate: 120 }}</p>
+      <div class="product-tags">
+        {% if product.origin %}<span class="tag">{{ product.origin }}</span>{% endif %}
+        {% if product.shu_range %}<span class="tag heat">{{ product.shu_range }} SHU</span>{% endif %}
+      </div>
+      <a href="{{ product.url | relative_url }}" class="btn btn-small">View Details</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<div class="custom-order-section">
+  <h2>Need a Custom Order?</h2>
+  <p>We can accommodate specific requirements for chilli variety, processing, packaging, and volume. Contact our team to discuss your needs.</p>
+  <a href="{{ '/contact/' | relative_url }}" class="btn btn-primary">Request Custom Quote</a>
+</div>
